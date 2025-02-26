@@ -1,117 +1,108 @@
-INFOGENIE
+# INFOGENIE
 
-INFOGENIE is an AI-powered chatbot application that provides intelligent responses to user queries by integrating web search and summarization capabilities. It uses Flask for the backend, HTML, CSS, and JavaScript for the frontend, and integrates Hugging Face models along with SmolAgent tools like DuckDuckGo search and text summarization.
+INFOGENIE is an AI-powered chatbot application that provides intelligent responses to user queries by integrating web search and summarization capabilities. It uses **Flask** for the backend, **HTML, CSS, and JavaScript** for the frontend, and integrates **Hugging Face models** along with SmolAgent tools like DuckDuckGo search and text summarization.
 
-Features
+## Features
 
-AI chatbot interface
-Web search using DuckDuckGo
-Text summarization tool
-Dark mode support
-Interactive UI with Tailwind CSS
-Tech Stack
+- AI chatbot interface
+- Web search using DuckDuckGo
+- Text summarization tool
+- Dark mode support
+- Interactive UI with Tailwind CSS
 
-Frontend
+## Tech Stack
 
-HTML, CSS, JavaScript
-Tailwind CSS
-Backend
+### **Frontend**
+- HTML, CSS, JavaScript
+- Tailwind CSS
 
-Flask (Python)
-SmolAgent (Hugging Face, DuckDuckGo Search, Summarization)
-LiteLLM (for Gemini API integration)
-Database
+### **Backend**
+- Flask (Python)
+- SmolAgent (Hugging Face, DuckDuckGo Search, Summarization)
+- LiteLLM (for Gemini API integration)
 
-No database (API-based interaction)
-Installation and Setup
+### **Database**
+- No database (API-based interaction)
 
-Prerequisites
+## Installation and Setup
 
-Python 3.9+
-Node.js (for frontend development)
-Git
-A virtual environment (recommended)
-Setup Backend
+### **Prerequisites**
+- Python 3.9+
+- Node.js (for frontend development)
+- Git
+- A virtual environment (recommended)
 
-Clone the repository:
-git clone https://github.com/Karthikeyasharma979/InfoGenie.git  
-cd InfoGenie  
-Create and activate a virtual environment:
-python -m venv env  
-source env/bin/activate  # On Windows use: env\Scripts\activate  
-Install dependencies:
+### **Setup Backend**
+```bash
+# Clone the repository
+git clone https://github.com/Karthikeyasharma979/InfoGenie.git
+cd InfoGenie
 
-nginx
-Copy
-Edit
-pip install -r requirements.txt  
-Run Flask server:
+# Create and activate a virtual environment
+python -m venv env
+source env/bin/activate  # On Windows use: env\Scripts\activate
 
-nginx
-Copy
-Edit
-python app.py  
-Setup Frontend
+# Install dependencies
+pip install -r requirements.txt
 
-Open the frontend folder:
+# Run Flask server
+python app.py
+```
 
-bash
-Copy
-Edit
-cd frontend  
-Start a local server (using VSCode Live Server or any other method).
+### **Setup Frontend**
+```bash
+# Open the frontend folder
+cd frontend
 
-API Endpoints
+# Start a local server (using VSCode Live Server or any other method)
+```
 
-Chat with AI
+## API Endpoints
 
-Endpoint:
+### **1. Chat with AI**
+```http
+POST /chat
+```
+**Request Body:**
+```json
+{
+  "message": "What is AI?"
+}
+```
+**Response:**
+```json
+{
+  "response": "AI stands for Artificial Intelligence..."
+}
+```
 
-bash
-Copy
-Edit
-POST /chat  
-Request Body:
+## Deployment
 
-json
-Copy
-Edit
-{  
-  "message": "What is AI?"  
-}  
-Response:
+### **Deploy Flask App (Backend)**
+- You can deploy the Flask backend using **Heroku, Render, or AWS**.
 
-json
-Copy
-Edit
-{  
-  "response": "AI stands for Artificial Intelligence..."  
-}  
-Deployment
+### **Deploy Frontend**
+- You can deploy the frontend using **GitHub Pages, Vercel, or Netlify**.
 
-Deploy Flask App (Backend)
-Flask backend can be deployed using Heroku, Render, or AWS.
+## Troubleshooting
 
-Deploy Frontend
-Frontend can be deployed using GitHub Pages, Vercel, or Netlify.
+### **CORS Error Fix**
+If you encounter a CORS issue when making API requests from the frontend, make sure **Flask-CORS** is enabled:
+```python
+from flask_cors import CORS
+CORS(app)
+```
 
-Troubleshooting
-
-CORS Error Fix
-If you encounter a CORS issue when making API requests from the frontend, ensure Flask-CORS is enabled:
-
-java
-Copy
-Edit
-from flask_cors import CORS  
-CORS(app)  
-ModuleNotFoundError: No module named 'google'
+### **ModuleNotFoundError: No module named 'google'**
 For Gemini API integration, install the Google dependencies:
+```bash
+pip install google-auth google-generativeai
+```
 
-nginx
-Copy
-Edit
-pip install google-auth google-generativeai  
-Contributors
+## Contributors
+- **Koratamaddi Karthikeyasharma** - [GitHub](https://github.com/Karthikeyasharma979) | [LinkedIn](https://linkedin.com/in/koratamaddi-karthikeya-sharma-396504194/)
 
-Koratamaddi Karthikeyasharma - GitHub | LinkedIn
+
+---
+📌 **Feel free to contribute, open issues, or suggest improvements!** 🚀
+
